@@ -7,7 +7,7 @@ export const HomeScreen = () => {
 
   return (
     <View>
-      <Text>Home Screen</Text>
+      <Text>HomeScreen</Text>
     </View>
   );
 };
