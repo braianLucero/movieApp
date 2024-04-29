@@ -1,8 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {useMovies} from '../../hooks/useMovies';
-import {ScrollView, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {PosterCarousel} from '../../components/movies/PosterCarousel';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
