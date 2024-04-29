@@ -17,12 +17,12 @@ export const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
       style={pressed => ({
         width,
         height,
-        marginBottom: 10,
-        marginHorizontal: 20,
-        paddingHorizontal: 10,
+        marginHorizontal: 2,
+        paddingBottom: 20,
+        paddingHorizontal: 5,
         opacity: pressed ? 0.9 : 1,
       })}>
-      <View style={{...style.imageContainer, width: 300, height: 400}}>
+      <View style={style.imageContainer}>
         <Image style={style.image} source={{uri: movie.poster}} />
       </View>
     </Pressable>
