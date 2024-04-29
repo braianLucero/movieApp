@@ -1,13 +1,22 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+/* eslint-disable react/react-in-jsx-scope */
 import {useMovies} from '../../hooks/useMovies';
+import {ScrollView, View, Text} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {PosterCarousel} from '../../components/movies/PosterCarousel';
 
 export const HomeScreen = () => {
-  const {} = useMovies();
+  const {top} = useSafeAreaInsets();
+  const {isLoading, nowPlaying} = useMovies();
+  console.log({nowPlaying});
+  if (isLoading) {
+    return <Text>Cargando...</Text>;
+  }
 
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <ScrollView>
+      <View style={{marginTop: top + 20, marginBottom: 30}}>
+        <PosterCarousel movies={nowPlaying} />
+      </View>
+    </ScrollView>
   );
 };
