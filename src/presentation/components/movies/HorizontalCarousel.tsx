@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   Text,
   View,
@@ -59,7 +59,7 @@ export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
         renderItem={({item}) => (
           <MoviePoster movie={item} width={140} height={200} />
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(index, item) => `${item.id}-${index}`}
         horizontal
         showsHorizontalScrollIndicator={false}
         onScroll={onScroll}
