@@ -12,5 +12,8 @@ export class MovieMapper {
       poster: `http://image.tmdb.org/t/p/w500${result.poster_path}`,
       backdrop: `http://image.tmdb.org/t/p/w500${result.backdrop_path}`,
     };
+
+
   }
+  static form MovieDBToEntity(movie:MovieDBMovie):FullMovie
 }
