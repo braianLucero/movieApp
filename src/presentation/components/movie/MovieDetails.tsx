@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 
 interface Props {
   movie: FullMovie;
+  cast: Cast[];
 }
 
 export const MovieDetails = ({movie}: Props) => {
@@ -17,6 +18,13 @@ export const MovieDetails = ({movie}: Props) => {
           Historia
         </Text>
         <Text style={{fontSize: 16}}>{movie.description}</Text>
+
+        <FlatList
+          data={cast}
+          keyExtractor={item => item.id.toString()}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
       </View>
     </>
   );
